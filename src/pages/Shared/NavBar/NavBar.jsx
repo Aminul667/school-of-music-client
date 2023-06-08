@@ -6,7 +6,7 @@ const NavBar = () => {
         <div className="flex flex-wrap items-center justify-between">
             <div className="flex justify-center items-center lg:w-[20%]">
                 <img src={logo} />
-                <div className="m-3 text-2xl lg:pl-0">
+                <div className="ml-3 text-2xl lg:pl-0">
                     SchoolOfMusic
                 </div>
             </div>
