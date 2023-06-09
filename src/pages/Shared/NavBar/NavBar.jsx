@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png'
 
 const NavBar = () => {
@@ -17,10 +18,10 @@ const NavBar = () => {
                 <div>
                     <div className="flex items-center justify-center h-8 border-x-0 border-colorPrimaryDark border-b-2">
                         <ul className="flex gap-6 font-bold">
-                            <li><a href="#">Home</a></li>
+                            <li><Link to='/'>Home</Link></li>
                             <li><a href="#">Instructors</a></li>
                             <li><a href="#">Classes</a></li>
-                            <li><a href="#">Login</a></li>
+                            <li><Link to='/login'>Login</Link></li>
                         </ul>
                     </div>
                     <div className="flex items-center justify-center">
