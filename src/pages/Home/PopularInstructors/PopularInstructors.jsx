@@ -5,7 +5,7 @@ const PopularInstructors = () => {
   const [classes] = useClasses();
   return (
     <div>
-      <h2 className="text-4xl">{classes.length}</h2>
+      <h2 className="titlePrimary">Our Popular Instructors</h2>
       <div className="grid grid-cols-3">
         {classes.map((instructor) => (
           <PopularInstructor

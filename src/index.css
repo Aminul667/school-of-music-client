@@ -9,6 +9,6 @@
     @apply py-5 px-7 bg-gradient-to-r from-colorPrimaryDark to-colorPrimaryLight rounded-[100px] shadow-sm text-white font-bold hover:to-colorPrimaryDark;
   }
   .titlePrimary {
-    @apply font-oswald text-4xl text-colorPrimaryDark mb-4;
+    @apply font-oswald text-4xl text-colorPrimaryDark my-4;
   }
 }
