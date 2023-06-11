@@ -1,14 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 import useAuth from "../../../hooks/useAuth";
 
 const NavBar = () => {
   const { user, logOut } = useAuth();
+  const navigate = useNavigate();
+
+  console.log('from Navbar', user);
 
   const handleLogOut = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.log(error));
+      navigate('/');
   };
 
   return (

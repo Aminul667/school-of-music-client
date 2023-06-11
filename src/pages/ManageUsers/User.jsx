@@ -1,7 +1,9 @@
-import { FaTrashAlt, FaUserShield } from "react-icons/fa";
+// import { useState } from "react";
+// import { FaTrashAlt, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const User = ({ user, index, refetch }) => {
+
   const handleMakeAdmin = (user) => {
     fetch(`http://localhost:5000/users/admin/${user._id}`, {
       method: "PATCH",
@@ -42,7 +44,6 @@ const User = ({ user, index, refetch }) => {
       });
   };
 
-  //   const handleDelete = (user) => {};
   return (
     <tr>
       <th>{index}</th>
@@ -57,54 +58,22 @@ const User = ({ user, index, refetch }) => {
       <td>{user.email}</td>
       <td>
         {user?.role}
-        {/* {user.role === "admin" ? (
-          "admin"
-        ) : (
-          <button
-            onClick={() => handleMakeAdmin(user)}
-            className="btn btn-ghost bg-orange-600 text-white"
-          >
-            <FaUserShield></FaUserShield>
-          </button>
-        )} */}
       </td>
       <td>
         <button
           onClick={() => handleMakeAdmin(user)}
           className="btn btn-ghost bg-orange-600 text-white"
+          disabled={user?.role === "admin" ? true : false}
         >
           Make Admin
         </button>
         <button
           onClick={() => handleMakeInstructor(user)}
-          className="btn btn-ghost bg-orange-600 text-white"
+          className="btn btn-ghost bg-orange-600 text-white ml-2"
+          disabled={user?.role === "instructor" ? true : false}
         >
           Make Instructor
         </button>
-        {/* {user.role === "admin" ? (
-          "admin"
-        ) : (
-          <>
-            <button
-              onClick={() => handleMakeAdmin(user)}
-              className="btn btn-ghost bg-orange-600 text-white"
-            >
-              Make Admin
-            </button>
-            <button
-              onClick={() => handleMakeInstructor(user)}
-              className="btn btn-ghost bg-orange-600 text-white"
-            >
-              Make Instructor
-            </button>
-          </>
-        )} */}
-        {/* <button
-          onClick={() => handleDelete(user)}
-          className="btn btn-ghost bg-red-600 text-white"
-        >
-          <FaTrashAlt></FaTrashAlt>
-        </button> */}
       </td>
     </tr>
   );
