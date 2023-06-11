@@ -2,7 +2,6 @@ import { FaTrashAlt, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const User = ({ user, index, refetch }) => {
-
   const handleMakeAdmin = (user) => {
     fetch(`http://localhost:5000/users/admin/${user._id}`, {
       method: "PATCH",
@@ -23,7 +22,27 @@ const User = ({ user, index, refetch }) => {
       });
   };
 
-  const handleDelete = (user) => {};
+  const handleMakeInstructor = (user) => {
+    fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${user.name} is instructor now`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
+
+  //   const handleDelete = (user) => {};
   return (
     <tr>
       <th>{index}</th>
@@ -37,7 +56,8 @@ const User = ({ user, index, refetch }) => {
       <td>{user.name}</td>
       <td>{user.email}</td>
       <td>
-        {user.role === "admin" ? (
+        {user?.role}
+        {/* {user.role === "admin" ? (
           "admin"
         ) : (
           <button
@@ -46,15 +66,45 @@ const User = ({ user, index, refetch }) => {
           >
             <FaUserShield></FaUserShield>
           </button>
-        )}
+        )} */}
       </td>
       <td>
         <button
+          onClick={() => handleMakeAdmin(user)}
+          className="btn btn-ghost bg-orange-600 text-white"
+        >
+          Make Admin
+        </button>
+        <button
+          onClick={() => handleMakeInstructor(user)}
+          className="btn btn-ghost bg-orange-600 text-white"
+        >
+          Make Instructor
+        </button>
+        {/* {user.role === "admin" ? (
+          "admin"
+        ) : (
+          <>
+            <button
+              onClick={() => handleMakeAdmin(user)}
+              className="btn btn-ghost bg-orange-600 text-white"
+            >
+              Make Admin
+            </button>
+            <button
+              onClick={() => handleMakeInstructor(user)}
+              className="btn btn-ghost bg-orange-600 text-white"
+            >
+              Make Instructor
+            </button>
+          </>
+        )} */}
+        {/* <button
           onClick={() => handleDelete(user)}
           className="btn btn-ghost bg-red-600 text-white"
         >
           <FaTrashAlt></FaTrashAlt>
-        </button>
+        </button> */}
       </td>
     </tr>
   );
