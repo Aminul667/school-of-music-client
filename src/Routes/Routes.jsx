@@ -4,6 +4,7 @@ import Main from "../Layout/Main";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import ManageUsers from "../pages/ManageUsers/ManageUsers";
+import AdminRoutes from "./AdminRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'manageusers',
-        element: <ManageUsers></ManageUsers>
+        element: <AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
       }
     ],
   },
