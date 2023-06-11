@@ -1,7 +1,27 @@
 import { FaTrashAlt, FaUserShield } from "react-icons/fa";
+import Swal from "sweetalert2";
 
-const User = ({ user, index }) => {
-  const handleMakeAdmin = (user) => {};
+const User = ({ user, index, refetch }) => {
+
+  const handleMakeAdmin = (user) => {
+    fetch(`http://localhost:5000/users/admin/${user._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${user.name} is admin now`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
 
   const handleDelete = (user) => {};
   return (

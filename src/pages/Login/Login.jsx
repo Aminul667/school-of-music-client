@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
-  const { signIn } = useAuth()
+  const { signIn } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -67,6 +67,14 @@ const Login = () => {
                     Forgot password?
                   </a>
                 </label> */}
+              </div>
+              <div className="form-control mt-6">
+                <input
+                  disabled={false}
+                  className="btn btn-primary"
+                  type="submit"
+                  value="Login"
+                />
               </div>
             </form>
             <p>
