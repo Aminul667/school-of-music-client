@@ -54,7 +54,7 @@ const NavBar = () => {
                   <a href="#">Dashboard</a>
                 </li>
                 <li>
-                  <a href="#">career</a>
+                  <Link to='/manageusers'>Manage Users</Link>
                 </li>
                 <li>
                   <a href="#">features</a>
