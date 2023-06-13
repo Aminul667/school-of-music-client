@@ -15,8 +15,6 @@ const MyClasses = () => {
     }
   );
 
-  console.log("MyClass", userClass);
-
   return (
     <div>
       <h2 className="titlePrimary">All Users</h2>
