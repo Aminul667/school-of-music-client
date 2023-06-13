@@ -40,7 +40,7 @@ const NavBar = () => {
                   <Link to="/instructor">Instructors</Link>
                 </li>
                 <li>
-                  <a href="#">Classes</a>
+                  <Link to="classes">Classes</Link>
                 </li>
                 {user ? (
                   <>
@@ -81,9 +81,6 @@ const NavBar = () => {
                     ) : (
                       ""
                     )}
-                    <li>
-                      <a href="#">gallery</a>
-                    </li>
                   </ul>
                 </div>
               </>

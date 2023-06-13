@@ -9,6 +9,7 @@ import Instructors from "../pages/Instructors/Instructors";
 import AddClass from "../pages/AddClass/AddClass";
 import InstructorRoutes from "./InstructorRoutes";
 import MyClasses from "../pages/MyClasses/MyClasses";
+import Classes from "../pages/Classes/Classes";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
       {
         path: "instructor",
         element: <Instructors></Instructors>,
+      },
+      {
+        path: "classes",
+        element: <Classes></Classes>,
       },
       {
         path: "login",
@@ -48,9 +53,13 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'myclass',
-        element: <InstructorRoutes><MyClasses></MyClasses></InstructorRoutes>
-      }
+        path: "myclass",
+        element: (
+          <InstructorRoutes>
+            <MyClasses></MyClasses>
+          </InstructorRoutes>
+        ),
+      },
     ],
   },
 ]);
