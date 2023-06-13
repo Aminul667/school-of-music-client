@@ -1,12 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 import useAuth from "../../../hooks/useAuth";
+import useUsers from "../../../hooks/useUsers";
 
 const NavBar = () => {
   const { user, logOut } = useAuth();
   const navigate = useNavigate();
+  const [usersDb] = useUsers();
 
-  console.log("from Navbar", user);
+  console.log("from NavBar", usersDb);
 
   const handleLogOut = () => {
     logOut()
@@ -52,22 +54,28 @@ const NavBar = () => {
                 )}
               </ul>
             </div>
-            <div className="flex items-center justify-center">
-              <ul className="flex h-12 gap-10 md:pt-[0.7rem] uppercase text-sm md:text-lg font-bold">
-                <li>
-                  <a href="#">Dashboard</a>
-                </li>
-                <li>
-                  <Link to="/manageusers">Manage Users</Link>
-                </li>
-                <li>
-                  <a href="#">features</a>
-                </li>
-                <li>
-                  <a href="#">gallery</a>
-                </li>
-              </ul>
-            </div>
+            {user ? (
+              <>
+                <div className="flex items-center justify-center">
+                  <ul className="flex h-12 gap-10 md:pt-[0.7rem] uppercase text-sm md:text-lg font-bold">
+                    <li>
+                      <a href="#">Dashboard</a>
+                    </li>
+                    <li>
+                      <Link to="/manageusers">Manage Users</Link>
+                    </li>
+                    <li>
+                      <a href="#">features</a>
+                    </li>
+                    <li>
+                      <a href="#">gallery</a>
+                    </li>
+                  </ul>
+                </div>
+              </>
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <div className="w-[10%] hidden lg:block">

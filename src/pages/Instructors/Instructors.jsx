@@ -5,7 +5,7 @@ import SingleInstructor from "./SingleInstructor";
 const Instructors = () => {
   const [axiosSecure] = useAxiosSecure();
 
-  const { data: instructors = [], refetch } = useQuery(
+  const { data: instructors = [] } = useQuery(
     ["instructor"],
     async () => {
       const res = await axiosSecure.get("/instructors");

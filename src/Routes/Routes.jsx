@@ -6,6 +6,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import ManageUsers from "../pages/ManageUsers/ManageUsers";
 import AdminRoutes from "./AdminRoutes";
 import Instructors from "../pages/Instructors/Instructors";
+import PrivateRoutes from "./PrivateRoutes";
 
 export const router = createBrowserRouter([
   {
