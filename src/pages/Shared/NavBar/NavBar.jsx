@@ -2,12 +2,14 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 import useAuth from "../../../hooks/useAuth";
 import useAdmin from "../../../hooks/useAdmin";
+import useInstructor from "../../../hooks/useInstructor";
 
 const NavBar = () => {
   const { user, logOut } = useAuth();
   const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor()
   const navigate = useNavigate();
-  console.log(isAdmin)
+  // console.log(isInstructor)
 
   const handleLogOut = () => {
     logOut()
@@ -68,7 +70,7 @@ const NavBar = () => {
                       ""
                     )}
                     <li>
-                      <a href="#">features</a>
+                      <Link to='/addclass'>Add a class</Link>
                     </li>
                     <li>
                       <a href="#">gallery</a>

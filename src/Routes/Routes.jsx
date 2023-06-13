@@ -6,7 +6,8 @@ import SignUp from "../pages/SignUp/SignUp";
 import ManageUsers from "../pages/ManageUsers/ManageUsers";
 import AdminRoutes from "./AdminRoutes";
 import Instructors from "../pages/Instructors/Instructors";
-import PrivateRoutes from "./PrivateRoutes";
+import AddClass from "../pages/AddClass/AddClass";
+import InstructorRoutes from "./InstructorRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -18,21 +19,33 @@ export const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path:"instructor",
-        element: <Instructors></Instructors>
+        path: "instructor",
+        element: <Instructors></Instructors>,
       },
       {
-        path: 'login',
-        element: <Login></Login>
+        path: "login",
+        element: <Login></Login>,
       },
       {
-        path: 'signup',
-        element: <SignUp></SignUp>
+        path: "signup",
+        element: <SignUp></SignUp>,
       },
       {
-        path: 'manageusers',
-        element: <AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
-      }
+        path: "manageusers",
+        element: (
+          <AdminRoutes>
+            <ManageUsers></ManageUsers>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "addclass",
+        element: (
+          <InstructorRoutes>
+            <AddClass></AddClass>
+          </InstructorRoutes>
+        ),
+      },
     ],
   },
 ]);
