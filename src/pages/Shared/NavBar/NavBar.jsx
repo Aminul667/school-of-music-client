@@ -6,14 +6,15 @@ const NavBar = () => {
   const { user, logOut } = useAuth();
   const navigate = useNavigate();
 
-  console.log('from Navbar', user);
+  console.log("from Navbar", user);
 
   const handleLogOut = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.log(error));
-      navigate('/');
+    navigate("/");
   };
+  // TODO: update links according to the role
 
   return (
     <nav>
@@ -33,12 +34,11 @@ const NavBar = () => {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="#">Instructors</a>
+                  <Link to="/instructor">Instructors</Link>
                 </li>
                 <li>
                   <a href="#">Classes</a>
                 </li>
-
                 {user ? (
                   <>
                     <button onClick={handleLogOut}>Logout</button>
@@ -58,7 +58,7 @@ const NavBar = () => {
                   <a href="#">Dashboard</a>
                 </li>
                 <li>
-                  <Link to='/manageusers'>Manage Users</Link>
+                  <Link to="/manageusers">Manage Users</Link>
                 </li>
                 <li>
                   <a href="#">features</a>
