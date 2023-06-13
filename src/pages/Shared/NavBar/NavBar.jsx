@@ -7,7 +7,7 @@ import useInstructor from "../../../hooks/useInstructor";
 const NavBar = () => {
   const { user, logOut } = useAuth();
   const [isAdmin] = useAdmin();
-  const [isInstructor] = useInstructor()
+  const [isInstructor] = useInstructor();
   const navigate = useNavigate();
   // console.log(isInstructor)
 
@@ -69,9 +69,18 @@ const NavBar = () => {
                     ) : (
                       ""
                     )}
-                    <li>
-                      <Link to='/addclass'>Add a class</Link>
-                    </li>
+                    {isInstructor ? (
+                      <>
+                        <li>
+                          <Link to="/addclass">Add a class</Link>
+                        </li>
+                        <li>
+                          <Link to="/myclass">My Classes</Link>
+                        </li>
+                      </>
+                    ) : (
+                      ""
+                    )}
                     <li>
                       <a href="#">gallery</a>
                     </li>
