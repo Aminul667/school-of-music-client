@@ -1,14 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 import useAuth from "../../../hooks/useAuth";
-import useUsers from "../../../hooks/useUsers";
+import useAdmin from "../../../hooks/useAdmin";
 
 const NavBar = () => {
   const { user, logOut } = useAuth();
+  const [isAdmin] = useAdmin();
   const navigate = useNavigate();
-  const [usersDb] = useUsers();
-
-  console.log("from NavBar", usersDb);
+  console.log(isAdmin)
 
   const handleLogOut = () => {
     logOut()
@@ -61,9 +60,13 @@ const NavBar = () => {
                     <li>
                       <a href="#">Dashboard</a>
                     </li>
-                    <li>
-                      <Link to="/manageusers">Manage Users</Link>
-                    </li>
+                    {isAdmin ? (
+                      <li>
+                        <Link to="/manageusers">Manage Users</Link>
+                      </li>
+                    ) : (
+                      ""
+                    )}
                     <li>
                       <a href="#">features</a>
                     </li>
