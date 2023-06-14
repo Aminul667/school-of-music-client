@@ -1,6 +1,6 @@
 # SchoolOfMusic
 
-### https://b7a11-kids-toy.web.app
+### https://b712-school-music.web.app/
 ### Features of my project
 * React
 * Tailwind CSS
