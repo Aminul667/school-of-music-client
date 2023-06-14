@@ -1,7 +1,9 @@
+import { motion } from "framer-motion";
+
 const PopularInstructor = ({instructor}) => {
 
   return (
-    <div className="mb-4">
+    <motion.div className="mb-4" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} >
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure>
           <img
@@ -16,7 +18,7 @@ const PopularInstructor = ({instructor}) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
