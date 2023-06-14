@@ -17,7 +17,6 @@ const NavBar = () => {
       .catch((error) => console.log(error));
     navigate("/");
   };
-  // TODO: update links according to the role
 
   return (
     <nav>
