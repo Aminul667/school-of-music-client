@@ -30,10 +30,8 @@ const SingleClasse = ({ singleClass, index }) => {
       image,
       userEmail: user.email,
     };
-    console.log("select", selectedClass);
 
     axiosSecure.post("/selected-class", selectedClass).then((data) => {
-      console.log("after posting new menu item", data.data);
       if (data.data.insertedId) {
         Swal.fire({
           position: "top-end",

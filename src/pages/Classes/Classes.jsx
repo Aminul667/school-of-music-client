@@ -3,7 +3,6 @@ import SingleClasse from "./SingleClasse";
 
 const Classes = () => {
   const [allClasses] = useAllClasses();
-  console.log(allClasses);
   return (
     <div>
       <h2 className="titlePrimary">All Classes</h2>

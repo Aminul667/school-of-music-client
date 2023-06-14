@@ -9,7 +9,6 @@ const NavBar = () => {
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
   const navigate = useNavigate();
-  // console.log(isInstructor)
 
   const handleLogOut = () => {
     logOut()

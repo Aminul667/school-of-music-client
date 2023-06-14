@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 
 const useUsers = ({ email }) => {
   if (email) {
-    console.log(email);
     const {
       data: usersDb = [],
       isLoading: loading,
@@ -10,7 +9,7 @@ const useUsers = ({ email }) => {
     } = useQuery({
       queryKey: ["users"],
       queryFn: async () => {
-        const res = await fetch("http://localhost:5000/users");
+        const res = await fetch("https://b712-school-of-music-server.vercel.app/users");
         return res.json();
       },
     });

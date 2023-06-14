@@ -52,12 +52,10 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log("Current User", currentUser);
-
       // get and set token
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", { email: currentUser.email })
+          .post("https://b712-school-of-music-server.vercel.app/jwt", { email: currentUser.email })
           .then((data) => {
             localStorage.setItem("access-token", data.data.token);
             setLoading(false);

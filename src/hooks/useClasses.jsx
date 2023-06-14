@@ -8,7 +8,7 @@ const useClasses = () => {
   } = useQuery({
     queryKey: ["classes"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/classes");
+      const res = await fetch("https://b712-school-of-music-server.vercel.app/classes");
       return res.json();
     },
   });

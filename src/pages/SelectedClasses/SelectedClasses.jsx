@@ -18,12 +18,11 @@ const SelectedClasses = () => {
   const handleDelete = (id) => {
     const proceed = confirm("Are you sure you want to delete");
     if (proceed) {
-      fetch(`http://localhost:5000/selected-class/${id}`, {
+      fetch(`https://b712-school-of-music-server.vercel.app/selected-class/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.deletedCount > 0) {
             refetch();
             alert("Deleted Successfully!");

@@ -17,14 +17,12 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data);
     createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
-      console.log(loggedUser);
       updateUserProfile(data.name, data.PhotoURL)
         .then(() => {
           const saveUser = { name: data.name, email: data.email, PhotoURL:data.PhotoURL };
-          fetch("http://localhost:5000/users", {
+          fetch("https://b712-school-of-music-server.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",

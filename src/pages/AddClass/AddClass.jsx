@@ -14,7 +14,6 @@ const AddClass = () => {
   const onSubmit = (data) => {
     const formData = new FormData();
     formData.append("image", data.image[0]);
-    console.log("add", data);
 
     fetch(img_hosting_url, {
       method: "POST",
@@ -34,9 +33,7 @@ const AddClass = () => {
             price: parseFloat(price),
             image: imgURL,
           };
-          console.log(newItem);
           axiosSecure.post("/all-class", newItem).then((data) => {
-            console.log("after posting new menu item", data.data);
             if (data.data.insertedId) {
               reset();
               Swal.fire({

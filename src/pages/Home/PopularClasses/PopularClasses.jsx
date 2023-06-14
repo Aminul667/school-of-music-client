@@ -11,7 +11,6 @@ import { Pagination } from "swiper";
 
 const PopularClasses = () => {
   const [classes] = useClasses();
-  console.log(classes);
 
   return (
     <div>
