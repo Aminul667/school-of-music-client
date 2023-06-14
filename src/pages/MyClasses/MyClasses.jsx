@@ -7,7 +7,7 @@ const MyClasses = () => {
   const { user } = useAuth();
   const [axiosSecure] = useAxiosSecure();
 
-  const { data: userClass = [], refetch } = useQuery(
+  const { data: userClass = [] } = useQuery(
     ["all-class"],
     async () => {
       const res = await axiosSecure.get(`/all-class/${user?.email}`);

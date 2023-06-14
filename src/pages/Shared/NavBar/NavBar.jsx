@@ -80,6 +80,13 @@ const NavBar = () => {
                     ) : (
                       ""
                     )}
+                    {
+                      !isAdmin & !isInstructor ? <>
+                      <li>
+                        <Link to='/selectedclass'>Selected Class</Link>
+                      </li>
+                      </>: ''
+                    }
                   </ul>
                 </div>
               </>

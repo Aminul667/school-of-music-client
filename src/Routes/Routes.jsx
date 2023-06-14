@@ -11,6 +11,7 @@ import InstructorRoutes from "./InstructorRoutes";
 import MyClasses from "../pages/MyClasses/MyClasses";
 import Classes from "../pages/Classes/Classes";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import SelectedClasses from "../pages/SelectedClasses/SelectedClasses";
 
 export const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
           </InstructorRoutes>
         ),
       },
+      {
+        path: 'selectedclass',
+        element: <SelectedClasses></SelectedClasses>
+      }
     ],
   },
 ]);
