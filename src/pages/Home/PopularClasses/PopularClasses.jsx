@@ -39,7 +39,7 @@ const PopularClasses = () => {
                 <h2 className="card-title">{classItem.name}</h2>
                 <p>{classItem.Instructor}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Details</button>
+                  <button className="btnPrimary">Details</button>
                 </div>
               </div>
             </div>

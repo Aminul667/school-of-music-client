@@ -13,11 +13,9 @@ const Instructors = () => {
     }
   );
 
-  console.log("Instructors: ", instructors);
-
   return (
     <div>
-      <h2 className="text-3xl font-bold">Total : {instructors.length}</h2>
+      <h2 className="titlePrimary">Our Instructors</h2>
       <div className="grid grid-cols-3">
         {instructors.map((instructor) => (
           <SingleInstructor
