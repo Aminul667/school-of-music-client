@@ -6,7 +6,7 @@ const PopularInstructors = () => {
   return (
     <div>
       <h2 className="titlePrimary">Our Popular Instructors</h2>
-      <div className="grid grid-cols-3">
+      <div className="grid lg:grid-cols-3 grid-cols-1">
         {classes.map((instructor) => (
           <PopularInstructor
             key={instructor._id}

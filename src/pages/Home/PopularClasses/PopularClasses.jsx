@@ -31,7 +31,7 @@ const PopularClasses = () => {
       >
         {classes.map((classItem) => (
           <SwiperSlide key={classItem._id}>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-60 md:w-72 lg:w-96 bg-base-100 shadow-xl">
               <figure>
                 <img src={classItem.photo} />
               </figure>

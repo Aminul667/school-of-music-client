@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const PopularInstructor = ({instructor}) => {
 
   return (
-    <motion.div className="mb-4" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} >
+    <motion.div className="mb-4 mx-auto" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} >
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure>
           <img
